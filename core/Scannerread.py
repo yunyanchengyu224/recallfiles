@@ -6,11 +6,11 @@ class Scanner:
   folder = Path(fpath_str)
   if not folder.is_dir():
     raise ValueError("Invalid path")
-  filename = []
-  foldername = []
+  filenames = []
+  foldernames = []
   for item in folder.iterdir():
     if item.is_file():
-      filename.append(item)
+      filenames.append(item)
     elif item.is_dir():
-        foldername.append(item)
-  return filename,foldername
+        foldernames.append(item)
+  return filenames,foldernames
